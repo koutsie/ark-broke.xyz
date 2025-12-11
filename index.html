@@ -1,31 +1,67 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>ark broke my psp wtf?</title>
-<style>
-body { 
-  max-width: 720px; 
-  margin: 0 auto; 
-  padding: 20px; 
-  text-align: center; 
-  font-family: monospace;
-  line-height: 1.6; 
-}
-a { 
-  color: #000; 
-}
-a:hover { 
-  background: #000; 
-  color: #fff; 
-}
-</style>
+  <meta charset="utf-8">
+  <title>ark broke my psp wtf?</title>
+  <script data-collect-dnt="true" async src="https://lemon-api.the-sauna.icu/latest.js"></script>
+  <style>
+    body {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+      font-family: monospace;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #000;
+    }
+
+    a:hover {
+      background: #000;
+      color: #fff;
+    }
+
+    #horsie {
+      max-height: 256px;
+    }
+  </style>
 </head>
+
 <body>
+  <button id="vsh">vsh experience</button>
+  <h1>ark broke my psp wtf?</h1>
+  <img id="horsie" src="images/image_1.webp" loading="lazy" alt="horsie">
+  <p><a href="https://github.com/PSP-Archive/ARK-4/wiki/Installation-on-PSP">install ark-4 properly</a></p>
+  <p>
+    <a href="arkchecker/arkcheck_signed.zip">
+      <img src="images/ARKCHECK.png" alt="download arkcheck" style="max-height: 128px;"><br>
+      not sure if you have ark installed, download arkcheck
+    </a>
+  </p>
+  <noscript><img src="https://lemon-api.the-sauna.icu/noscript.gif?collect-dnt=true" alt=""
+      referrerpolicy="no-referrer-when-downgrade"></noscript>
+  <script>
+    const images = ['image_0.webp', 'image_1.webp', 'image_2.webp'];
+    const randomIndex = Math.floor(Math.random() * images.length);
+    document.getElementById('horsie').src = 'images/' + images[randomIndex];
 
-<h1>ark broke my psp wtf?</h1>
+    const btn = document.getElementById('vsh');
+    const audio = new Audio('music/loop.wav');
+    audio.loop = true;
+    audio.volume = 0.15;
 
-<p><a href="https://github.com/PSP-Archive/ARK-4/wiki/Installation-on-PSP">install ark-4 properly</a></p>
-
+        btn.addEventListener('click', () => {
+          if (audio.paused) {
+            audio.play();
+          } else {
+            audio.pause();
+            audio.currentTime = 0;
+          }
+        });
+      </script>
 </body>
+
 </html>
