@@ -7,61 +7,125 @@
   <script data-collect-dnt="true" async src="https://lemon-api.the-sauna.icu/latest.js"></script>
   <style>
     body {
-      max-width: 720px;
+      font-family: "Courier New", Courier, monospace;
+      color: #111;
+      background: #fff;
+    }
+
+
+
+    .shimmer-text {
+      display: inline-block;
+      font-size: 1.65em;
+      color: #210a4a;
+      font-weight: 700;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 6px;
+      padding: 10px 18px;
+      border-radius: 8px;
+      background: transparent;
+      text-shadow:
+        0 0 6px rgba(123, 104, 238, 0.85),
+        0 0 16px rgba(106, 90, 205, 0.6),
+        0 0 30px rgba(72, 61, 139, 0.35);
+      transition: text-shadow 0.4s ease, transform 0.4s ease;
+      animation: glow 3s ease-in-out infinite;
+    }
+
+    @keyframes glow {
+      0% {
+        text-shadow: 0 0 4px rgba(123, 104, 238, 0.6), 0 0 12px rgba(106, 90, 205, 0.45), 0 0 20px rgba(72, 61, 139, 0.22);
+        transform: scale(1);
+      }
+
+      50% {
+        text-shadow: 0 0 10px rgba(123, 104, 238, 0.95), 0 0 26px rgba(106, 90, 205, 0.75), 0 0 44px rgba(72, 61, 139, 0.45);
+        transform: scale(1.01);
+      }
+
+      100% {
+        text-shadow: 0 0 4px rgba(123, 104, 238, 0.6), 0 0 12px rgba(106, 90, 205, 0.45), 0 0 20px rgba(72, 61, 139, 0.22);
+        transform: scale(1);
+      }
+    }
+
+    .bottom-links .sep {
+      opacity: 0.6;
+      padding: 0 2px;
+    }
+
+    #vsh {
+      display: block;
+      margin: 10px auto;
+      padding: 6px 10px;
+      font-family: inherit;
+    }
+
+    .main {
+      max-width: 980px;
       margin: 0 auto;
-      padding: 20px;
       text-align: center;
-      font-family: monospace;
-      line-height: 1.6;
-    }
-
-    a {
-      color: #000;
-    }
-
-    a:hover {
-      background: #000;
-      color: #fff;
+      padding: 8px 12px;
     }
 
     #horsie {
-      max-height: 256px;
+      display: block;
+      margin: 8px auto 18px auto;
+      max-width: 100%;
+      height: auto;
+      max-height: 128px;
     }
   </style>
 </head>
 
 <body>
   <button id="vsh">vsh experience</button>
-  <h1>ark broke my psp wtf?</h1>
-  <img id="horsie" src="images/image_1.webp" loading="lazy" alt="horsie">
-  <p><a href="https://github.com/PSP-Archive/ARK-4/wiki/Installation-on-PSP">install ark-4 properly</a></p>
-  <p>
-    <a href="arkchecker/arkcheck_signed.zip">
-      <img src="images/ARKCHECK.png" alt="download arkcheck" style="max-height: 128px;"><br>
-      not sure if you have ark installed, download arkcheck
-    </a>
-  </p>
-  <noscript><img src="https://lemon-api.the-sauna.icu/noscript.gif?collect-dnt=true" alt=""
-      referrerpolicy="no-referrer-when-downgrade"></noscript>
-  <script>
-    const images = ['image_0.webp', 'image_1.webp', 'image_2.webp'];
-    const randomIndex = Math.floor(Math.random() * images.length);
-    document.getElementById('horsie').src = 'images/' + images[randomIndex];
+  <div class="main">
+    <h1>ark broke my psp wtf?</h1>
+    <img id="horsie" src="images/image_1.webp" loading="lazy" alt="horsie">
+    <p><span id="install"><a id="install-link" href="https://github.com/PSP-Archive/ARK-4/wiki/Installation-on-PSP"
+          class="shimmer-text">install ark propely</a></span></p>
+    <p>
+      <a href="arkchecker/arkcheck_signed.zip">
+        <img src="images/ARKCHECK.png" alt="download arkcheck" style="max-height: 128px;"><br>
+        not sure if you have ark installed, download arkcheck
+      </a>
+    </p>
+    <noscript><img src="https://lemon-api.the-sauna.icu/noscript.gif?collect-dnt=true" alt=""
+        referrerpolicy="no-referrer-when-downgrade"></noscript>
+    <script>
+      const images = ['image_0.webp', 'image_1.webp', 'image_2.webp'];
+      const randomIndex = Math.floor(Math.random() * images.length);
+      document.getElementById('horsie').src = 'images/' + images[randomIndex];
 
-    const btn = document.getElementById('vsh');
-    const audio = new Audio('music/loop.wav');
-    audio.loop = true;
-    audio.volume = 0.15;
+      const btn = document.getElementById('vsh');
+      const audio = new Audio('music/loop.wav');
+      audio.loop = true;
+      audio.volume = 0.15;
 
-        btn.addEventListener('click', () => {
-          if (audio.paused) {
-            audio.play();
-          } else {
-            audio.pause();
-            audio.currentTime = 0;
-          }
-        });
-      </script>
+      btn.addEventListener('click', () => {
+        if (audio.paused) {
+          audio.play();
+        } else {
+          audio.pause();
+          audio.currentTime = 0;
+        }
+      });
+    </script>
+  </div>
+  <div
+    style="width: 100%; display: flex; flex-direction: column; align-items: center; margin-top: 60px; margin-bottom: 30px;">
+    <div class="bottom-links">
+      <a href="https://the-sauna.icu/vshbgm/">vshbgm</a>
+      <span class="sep">|</span>
+      <a href="https://the-sauna.icu/64kformat/">64kformat</a>
+      <span class="sep">|</span>
+      <a href="https://the-sauna.icu/DataDexter/">DataDexter</a>
+    </div>
+    <img src="images/works_on_ark4.png" alt="works on ark4" style="height: 48px; margin-top: 12px;" />
+  </div>
+
 </body>
 
 </html>
